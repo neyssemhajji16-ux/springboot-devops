@@ -15,5 +15,17 @@ pipeline {
                 sh 'date'
             }
         }
+
+        stage('Maven Build') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Maven Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
     }
 }
